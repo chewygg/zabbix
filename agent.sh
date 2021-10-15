@@ -128,7 +128,7 @@ stat /etc/zabbix/zabbix_agentd.conf
 if [ $? -eq 0 ]; then
     sed -i 's/Server=127.0.0.1/#Server=127.0.0.1/gi' /etc/zabbix/zabbix_agentd.conf
 	sed -i -r 's/[[:punct:]] ListenPort\=[[:digit:]]{5}/ListenPort\=10051/g' /etc/zabbix/zabbix_agentd.conf
-	sed -i -r 's/^ServerActive\=127.0.0.1/ServerActive=noc.next4sec.com/g' /etc/zabbix/zabbix_agentd.conf
+	sed -i -r 's/^ServerActive\=127.0.0.1/ServerActive=noc.com/g' /etc/zabbix/zabbix_agentd.conf
 	sed -i -r 's/^^Hostname\=Zabbix server/Hostname==system.hostname/g' /etc/zabbix/zabbix_agentd.conf
 	echo "
 TLSConnect=cert
