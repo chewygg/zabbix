@@ -72,6 +72,7 @@ if [[ "$os" = "ubuntu" ]]; then
 	dpkg -i zabbix-release_5.4-1+ubuntu20.04_all.deb &&  apt-get update && apt-get install -y zabbix-agent 
 	if [ $? -eq 0 ]; then
 		echo "Nao foi possivel instalar o agente"
+		exit
 	else
 		echo "Baixou chefia (O_O)"
 	fi
@@ -81,6 +82,8 @@ if [[ "$os" = "ubuntu" ]]; then
 		dpkg -i zabbix-release_5.4-1+debian10_all.deb &&  apt-get update && apt-get install -y zabbix-agent
 		if [ $? -eq 0 ]; then
 			echo "Nao foi possivel instalar o agente"
+			
+			exit
 		else
 			echo "Baixou chefia (O_O)"
 		fi
@@ -90,6 +93,7 @@ if [[ "$os" = "ubuntu" ]]; then
 		dnf clean all && dnf install -y zabbix-agent 
 		if [ $? -eq 0 ]; then
 			echo "Nao foi possivel instalar o agente"
+			exit
 		else
 			echo "Baixou chefia (O_O)"
 		fi
